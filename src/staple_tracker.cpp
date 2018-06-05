@@ -36,7 +36,7 @@ void STAPLE_TRACKER::mexResize(const cv::Mat &im, cv::Mat &output, cv::Size news
         assert(0);
         return;
     }
-
+  interpolation = cv::INTER_LINEAR;
   resize(im, output, newsz, 0, 0, interpolation);
 }
 
