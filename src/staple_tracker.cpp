@@ -213,7 +213,7 @@ void STAPLE_TRACKER::updateHistModel(bool new_model, cv::Mat &patch, double lear
         bg_area.height - 2 * pad_offset1.height
         );
 
-    bg_mask(pad1_rect) = false;
+    bg_mask(pad1_rect).setTo(cv::Scalar(0));
 
     ////////////////////////////////////////////////////////////////////////
     cv::Size pad_offset2;
@@ -251,7 +251,7 @@ void STAPLE_TRACKER::updateHistModel(bool new_model, cv::Mat &patch, double lear
         bg_area.height - 2 * pad_offset2.height
         );
 
-    fg_mask(pad2_rect) = true;
+   fg_mask(pad2_rect).setTo(cv::Scalar(1)); 
     ////////////////////////////////////////////////////////////////////////
 
     cv::Mat fg_mask_new;
